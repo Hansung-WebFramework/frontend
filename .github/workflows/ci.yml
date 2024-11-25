@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "**" # 모든 브랜치에 대해 CI 진행
+  pull_request:
+    branches:
+      - "main" # develop 브랜치에 대해 PR이 올라올 때 CI 진행
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 리포지토리 체크아웃
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      # 2. frontend 디렉토리 내용 확인 (디버깅용)
+      - name: List frontend directory contents
+        run: ls -la react-app
+
+      # 3. Node.js 설정
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20" # 원하는 Node.js 버전을 지정
+
+      # 4. npm 캐시 설정
+      - name: Configure npm cache
+        run: npm config get cache
+
+      # 5. 의존성 설치
+      - name: Install dependencies
+        working-directory: react-app
+        run: npm ci
+
+      # # 6. Prettier로 코드 포맷팅
+      # - name: Run Prettier
+      #   working-directory: react-app
+      #   run: npx prettier --write .
+
+      # # 7. 포맷팅된 결과를 커밋
+      # - name: Commit Prettier changes
+      #   working-directory: react-app
+      #   run: |
+      #     git config --global user.name "github-actions[bot]"
+      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      #     git add .
+      #     git diff-index --quiet HEAD || git commit -m "chore: format code with Prettier"
+
+      # 8. ESLint 실행
+      #- name: Run ESLint
+      #  working-directory: react-app
+      #  run: npm run lint  # ESLint를 실행하는 스크립트를 `package.json`에 설정
+
+      # 9. 빌드 실행
+      - name: Build project
+        working-directory: react-app
+        run: npm run build
