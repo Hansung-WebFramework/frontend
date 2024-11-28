@@ -1,6 +1,6 @@
 // 뉴스 분석 페이지 구성
 import { Button } from "../components/ui/Button";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card";
 import { Link } from 'react-router-dom'; // Link 컴포넌트를 사용하기 위해 임포트
 import '../components/layout/AnalysisPage.module.css';
 import Navbar from '../components/layout/Navbar.jsx';
