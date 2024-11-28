@@ -6,6 +6,7 @@ import '../components/layout/AnalysisPage.module.css';
 import Navbar from '../components/layout/Navbar.jsx';
 import { useEffect, useState } from 'react';
 import Loader from '../components/Loader.jsx'; // 로딩 컴포넌트 임포트
+import ErrorAlert from '../components/ErrorAlert.jsx'; // 경고창 컴포넌트 임포트
 
 async function getAnalitics() { // fetch 쿼리문
     const res = await fetch("http://localhost:5173/analysis");
@@ -24,6 +25,7 @@ const AnalysisPage = () => {
     const [selectedData, setSelectedData] = useState(null); // 선택된 뉴스 데이터
     const [displayedSummary, setDisplayedSummary] = useState('');
     const [loading, setLoading] = useState(true); // 로딩 상태 추가
+    const [showWarning, setShowWarning] = useState(false); // 경고창 상태 추가
 
     useEffect(() => {
         const fetchData = async () => {
@@ -37,6 +39,11 @@ const AnalysisPage = () => {
                 if (selected) {
                     setSelectedData(selected); // 선택된 데이터 설정
                     setDisplayedSummary(selected.summary); // 초기 요약 설정
+
+                    // 정확도가 50% 미만인 경우 경고창 표시
+                    if (selected.accuracy < 50) {
+                      setShowWarning(true);
+                  }
                 }
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -69,6 +76,10 @@ const AnalysisPage = () => {
     }, 500);
   };
 
+  const handleCloseWarning = () => {
+    setShowWarning(false); // 경고창 닫기
+  };
+
   if (loading) {
     return <Loader />; // 로딩 컴포넌트를 표시
   }
@@ -85,6 +96,14 @@ const AnalysisPage = () => {
     <div className="min-h-screen bg-background">
       {/* Navbar 사용 */}
       <Navbar />
+
+      {/* 경고창 표시 */}
+      {showWarning && (
+        <ErrorAlert
+          message="해당 기사는 정확도가 낮아 신뢰도가 떨어질 수 있습니다."
+          onClose={handleCloseWarning}
+        />
+      )}
 
       {/* 메인 콘텐츠 영역 */}
       <main className="container mx-auto p-4">
