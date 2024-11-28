@@ -7,6 +7,7 @@ import Navbar from '../components/layout/Navbar.jsx';
 import { useEffect, useState } from 'react';
 import Loader from '../components/Loader.jsx'; // 로딩 컴포넌트 임포트
 import ErrorAlert from '../components/ErrorAlert.jsx'; // 경고창 컴포넌트 임포트
+import AccuracyCircle from "../components/AccuracyCircle"; // 정확도 컴포넌트 임포트
 
 async function getAnalitics() { // fetch 쿼리문
     const res = await fetch("http://localhost:5173/analysis");
@@ -139,14 +140,7 @@ const AnalysisPage = () => {
               </CardHeader>
               <CardContent>
                 <div className="flex justify-center">
-                  <div className="relative h-48 w-48">
-                    <div className="absolute inset-0 flex items-center justify-center rounded-full border-8 border-primary/20">
-                      <div className="text-center">
-                        <div className="text-4xl font-bold">{selectedData.accuracy}% {/* 정확도 분석 accuracy */}</div>
-                        <div className="text-sm text-muted-foreground">Accuracy</div>
-                      </div>
-                    </div>
-                  </div>
+                  <AccuracyCircle accuracy={selectedData.accuracy} />
                 </div>
                 <div className="mt-6 flex justify-center gap-4">
                   <div className="flex items-center gap-2">
