@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card"
 import '../components/layout/AnalysisPage.module.css';
 import Navbar from '../components/layout/Navbar.jsx';
 import { useEffect, useState } from 'react';
+import Loader from '../components/Loader.jsx'; // 로딩 컴포넌트 임포트
 
 async function getAnalitics() { // fetch 쿼리문
     const res = await fetch("http://localhost:5173/analysis");
@@ -22,10 +23,12 @@ const AnalysisPage = () => {
     const [error, setError] = useState(null); // 에러 상태 선언
     const [selectedData, setSelectedData] = useState(null); // 선택된 뉴스 데이터
     const [displayedSummary, setDisplayedSummary] = useState('');
+    const [loading, setLoading] = useState(true); // 로딩 상태 추가
 
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setLoading(true); // 로딩 시작
                 const analyticsData = await getAnalitics();
                 setData(analyticsData); // 전체 데이터 업데이트
     
@@ -38,7 +41,11 @@ const AnalysisPage = () => {
             } catch (error) {
                 console.error("Error fetching data:", error);
                 setError(error); // 에러 상태 업데이트
-            }
+            } finally {
+              setTimeout(() => {
+                  setLoading(false); // 로딩 종료
+              }, 3000); // 로딩 애니메이션 확인을 위해 약간의 딜레이 추가
+          }
         };
 
         fetchData();
@@ -46,21 +53,33 @@ const AnalysisPage = () => {
 
   console.log(data);
 
+  const handleShowKoreanSummary = () => {
+    setLoading(true); // 로딩 시작
+    setTimeout(() => {
+      setDisplayedSummary(selectedData['summary-kor']); // 한국어 요약 표시
+      setLoading(false); // 로딩 종료
+    }, 500); // 애니메이션 확인을 위한 딜레이 추가
+  };
+
+  const handleShowEnglishSummary = () => {
+    setLoading(true); // 로딩 시작
+    setTimeout(() => {
+      setDisplayedSummary(selectedData.summary); // 영어 요약 표시
+      setLoading(false); // 로딩 종료
+    }, 500);
+  };
+
+  if (loading) {
+    return <Loader />; // 로딩 컴포넌트를 표시
+  }
+
   if (error) {
-      return <div>데이터를 불러오는 중 오류가 발생했습니다: {error.message}</div>;
+    return <div>데이터를 불러오는 중 오류가 발생했습니다: {error.message}</div>;
   }
 
   if (!data) {
       return <div>데이터를 불러오는 중입니다...</div>;
   }
-
-  const handleShowKoreanSummary = () => {
-    setDisplayedSummary(selectedData['summary-kor']); // 한국어 요약 표시
-  };
-
-  const handleShowEnglishSummary = () => {
-    setDisplayedSummary(selectedData.summary); // 영어 요약 표시
-  };
   
   return (
     <div className="min-h-screen bg-background">
