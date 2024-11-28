@@ -6,8 +6,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/AnalysisPage" element={<AnalysisPage />} />{" "}
-        {/* 분석 차트 페이지 라우팅 */}
+        <Route path="/AnalysisPage/:id" element={<AnalysisPage />} /> {/* 분석 차트 페이지 라우팅 */}
         <Route path="/scrap" element={<ScrapPage />} />
       </Routes>
     </Router>
