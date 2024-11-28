@@ -4,9 +4,47 @@ import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card"
 import { Link } from 'react-router-dom'; // Link 컴포넌트를 사용하기 위해 임포트
 import '../components/layout/AnalysisPage.module.css';
 import Navbar from '../components/layout/Navbar.jsx';
+import { useEffect, useState } from 'react';
 
-export default function AnalysisPage() {
-    return (
+async function getAnalitics() { // fetch 쿼리문
+    const res = await fetch("http://localhost:5173/analysis");
+
+    if (!res.ok) {
+        throw new Error("HTTP ERROR");
+    }
+
+    return res.json();
+}
+
+const AnalysisPage = () => {
+  const [data, setData] = useState(null); // 데이터 상태 선언
+  const [error, setError] = useState(null); // 에러 상태 선언
+
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const test = await getAnalitics();
+            setData(test); // 데이터 상태 업데이트
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            setError(error); // 에러 상태 업데이트
+        }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(data);
+
+  if (error) {
+      return <div>데이터를 불러오는 중 오류가 발생했습니다: {error.message}</div>;
+  }
+
+  if (!data) {
+      return <div>데이터를 불러오는 중입니다...</div>;
+  }
+    
+  return (
     <div className="min-h-screen bg-background">
       {/* Navbar 사용 */}
       <Navbar />
@@ -108,4 +146,6 @@ export default function AnalysisPage() {
       </main>
     </div>
     );
-}
+};
+
+export default AnalysisPage;
