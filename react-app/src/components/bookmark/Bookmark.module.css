@@ -1,0 +1,10 @@
+.bookmarkedItem {
+  position: relative;
+}
+
+.bookmarkIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  /* 추가적인 스타일 */
+}
