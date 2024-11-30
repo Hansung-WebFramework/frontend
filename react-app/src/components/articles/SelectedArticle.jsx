@@ -4,10 +4,7 @@ export default function SelectedArticle({ article, onClick }) {
     if (!article) return null;
 
     return (
-        <div
-            className="bg-white rounded-lg shadow-lg p-6 cursor-pointer"
-            onClick={onClick}
-        >
+        <div className="bg-white rounded-lg shadow-lg p-6">
             <div className="relative">
                 <span className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                     본석 페이지
@@ -27,6 +24,12 @@ export default function SelectedArticle({ article, onClick }) {
                 <h2 className="text-lg font-bold">{article.title}</h2>
                 <p className="text-sm text-gray-600">{article.summary}</p>
             </div>
+            <button
+                onClick={onClick}
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4"
+            >
+                뉴스 요약 및 페이지 이동
+            </button>
         </div>
     );
 }

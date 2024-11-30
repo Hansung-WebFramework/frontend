@@ -6,15 +6,13 @@ export default function ArticleItem({ article, onClick }) {
             className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
             onClick={() => onClick(article)}
         >
-            {/* 이미지가 칸 안에서 크기를 유지하도록 수정 */}
-            <div className="w-full h-32 relative">
+            <div className="relative w-full h-[200px]">
                 <img
                     src={article.originalArticle.image}
                     alt={article.title}
-                    className="absolute inset-0 w-full h-full object-cover object-center"
+                    className="absolute inset-0 w-full h-full object-cover"
                 />
             </div>
-            {/* 텍스트 영역 */}
             <div className="p-3">
                 <h3 className="font-medium text-sm text-gray-900">{article.title}</h3>
             </div>
