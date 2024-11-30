@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 export default function ArticleItem({ article, onClick }) {
     return (
         <div
-            className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+            className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-xl hover:scale-105 transform transition-all duration-300"
             onClick={() => onClick(article)}
         >
             <div className="relative w-full h-[200px]">

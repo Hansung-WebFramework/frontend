@@ -1,47 +1,45 @@
-import { useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Loader from '../components/Loader';
 import ArticleList from '../components/articles/ArticleList';
-import Navbar from '../components/layout/Navbar';
-
-function useQuery() {
-    return new URLSearchParams(useLocation().search);
-}
 
 export default function SearchResultsPage() {
-    const query = useQuery();
-    const searchQuery = query.get('query');
-    const [filteredArticles, setFilteredArticles] = useState([]);
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchArticles = async () => {
+        const fetchSearchResults = async () => {
             try {
-                const res = await fetch('/analysis');
-                if (!res.ok) {
-                    throw new Error('Failed to fetch articles');
+                const response = await fetch('/analysis');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch search results');
                 }
-                const articles = await res.json();
-                const results = articles.filter(
-                    (article) =>
-                        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                        article.summary.toLowerCase().includes(searchQuery.toLowerCase())
-                );
-                setFilteredArticles(results);
+                const data = await response.json();
+                setArticles(data);
             } catch (error) {
-                console.error('Error fetching articles:', error);
+                console.error('Error fetching search results:', error);
+            } finally {
+                setTimeout(() => setLoading(false), 500); // 로딩 화면 유지 시간
             }
         };
 
-        if (searchQuery) {
-            fetchArticles();
-        }
-    }, [searchQuery]);
+        fetchSearchResults();
+    }, []);
+
+    const handleArticleClick = (article) => {
+        navigate(`/AnalysisPage/${article.id}`);
+    };
+
+    if (loading) {
+        return <Loader />;
+    }
 
     return (
-        <div className="min-h-screen bg-[#f0f4f8]">
-            <Navbar />
+        <div className="min-h-screen bg-gray-100">
             <main className="container mx-auto px-4 py-8">
-                <h1 className="text-2xl font-bold mb-4">Search Results for "{searchQuery}"</h1>
-                <ArticleList articles={filteredArticles} onArticleSelect={() => { }} />
+                <h1 className="text-2xl font-bold mb-4">Search Results</h1>
+                <ArticleList articles={articles} onArticleSelect={handleArticleClick} />
             </main>
         </div>
     );

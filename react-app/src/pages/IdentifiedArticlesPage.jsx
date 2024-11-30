@@ -10,6 +10,7 @@ export default function IdentifiedArticlesPage() {
     const [selectedArticle, setSelectedArticle] = useState(null);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
+    const [transitioning, setTransitioning] = useState(false);
     const articlesPerPage = 4;
     const navigate = useNavigate();
 
@@ -38,14 +39,17 @@ export default function IdentifiedArticlesPage() {
     };
 
     const handleArticleClick = (article) => {
-        navigate(`/AnalysisPage/${article.id}`);
+        setTransitioning(true);
+        setTimeout(() => {
+            navigate(`/AnalysisPage/${article.id}`);
+        }, 500); // 로딩 애니메이션 지속 시간
     };
 
     const handlePageChange = (page) => {
         setCurrentPage(page);
     };
 
-    if (loading) {
+    if (loading || transitioning) {
         return <Loader />;
     }
 
