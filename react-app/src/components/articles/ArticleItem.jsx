@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 export default function ArticleItem({ article, onClick }) {
     return (
@@ -6,24 +6,29 @@ export default function ArticleItem({ article, onClick }) {
             className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
             onClick={() => onClick(article)}
         >
-            {/* 이미지에 hover 시 확대 효과 추가 */}
-            <img
-                src={article.image}
-                alt={article.title}
-                className="w-full h-32 object-cover transition-transform duration-300 transform hover:scale-105" // 확대 효과 추가
-            />
+            {/* 이미지가 칸 안에서 크기를 유지하도록 수정 */}
+            <div className="w-full h-32 relative">
+                <img
+                    src={article.originalArticle.image}
+                    alt={article.title}
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+            </div>
+            {/* 텍스트 영역 */}
             <div className="p-3">
                 <h3 className="font-medium text-sm text-gray-900">{article.title}</h3>
             </div>
         </div>
-    )
+    );
 }
 
 ArticleItem.propTypes = {
     article: PropTypes.shape({
-        id: PropTypes.number.isRequired,
+        id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
+        originalArticle: PropTypes.shape({
+            image: PropTypes.string.isRequired,
+        }).isRequired,
     }).isRequired,
     onClick: PropTypes.func.isRequired,
-}
+};
