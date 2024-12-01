@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import NavBar from '../components/layout/Navbar';
 import AnalysisChart from '../components/ui/Analysischart';
-import styles from './OnboardingPage.module.css';
+import styles from './OnBoardingPage.module.css';
 import OnboardingObject from '../assets/images/OnBoardingObject.png';
 
 export default function OnboardingPage() {
