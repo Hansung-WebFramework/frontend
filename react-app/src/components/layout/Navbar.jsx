@@ -1,7 +1,17 @@
-import { Search, Menu, Bell } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Search, Menu, Bell } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
+    const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        if (searchQuery.trim()) {
+            navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
+        }
+    };
+
     return (
         <nav className="sticky top-0 z-50 w-full bg-[#0A192F] text-white shadow-lg">
             <div className="container mx-auto px-4">
@@ -17,8 +27,13 @@ export default function Navbar() {
                                 type="text"
                                 placeholder="Search articles..."
                                 className="w-full px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
                             />
-                            <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/50" />
+                            <Search
+                                className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/50 cursor-pointer"
+                                onClick={handleSearch}
+                            />
                         </div>
                     </div>
 
@@ -37,5 +52,5 @@ export default function Navbar() {
                 </div>
             </div>
         </nav>
-    )
+    );
 }
