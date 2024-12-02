@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
-import PropTypes from 'prop-types';  
+import PropTypes from 'prop-types';
 
 export default function AnalysisChart({ data }) {
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ export default function AnalysisChart({ data }) {
       {/* 버튼 */}
       <div style={{ marginBottom: '20px', textAlign: 'right', marginRight: '100px' }}>
         <button
-          onClick={() => navigate('/identified-articles')}
+          onClick={() => navigate('/IdentifiedArticlesPage')}
           style={{
             backgroundColor: 'transparent',
             border: 'none',
