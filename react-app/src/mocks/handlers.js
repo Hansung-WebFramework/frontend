@@ -1,6 +1,7 @@
 import { HttpResponse, http } from "msw";
 import dummy from "./dummy.json";
 import analysis from "./analysis.json";
+import newsDummy from "./newsDummy.json";
 
 export const handlers = [
   http.get("/dummy", () => {
@@ -10,5 +11,9 @@ export const handlers = [
   // 분석 차트 페이지용 Mock API
   http.get("/analysis", () => {
     return HttpResponse.json(analysis);
-  })
+  }),
+
+  http.get("/bookmarks", () => {
+    return HttpResponse.json(newsDummy);
+  }),
 ];

@@ -1,53 +1,49 @@
+// src/components/bookmark/BookmarkedArticleItem.jsx
 import PropTypes from "prop-types";
-import { Bookmark } from "lucide-react";
 
-export default function BookmarkedArticleItem({
-  article,
-  onClick,
-  onBookmark,
-  isBookmarked,
-}) {
-  return (
-    <div className="group relative overflow-hidden transition-all hover:shadow-lg bg-white rounded-lg">
-      {" "}
-      {/* 그룹 클래스 추가 */}
-      <div className="relative h-48">
-        {/* 이미지 확대 효과 */}
-        <img
-          src={article.image}
-          alt={article.title}
-          className="h-full w-full object-cover transition-transform group-hover:scale-105"
-        />
-        {/* 배경 그라데이션 */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        {/* 북마크 버튼 */}
-        <button
-          className="absolute top-2 right-2 p-2 rounded-full bg-transparent hover:bg-white/20 focus:ring-2 focus:ring-red-500"
-          onClick={() => onBookmark(article.id)}
-        >
-          <Bookmark
-            className={`h-5 w-5 ${
-              isBookmarked ? "fill-red-500 drop-shadow-md" : "stroke-white"
-            }`}
-          />
-        </button>
-      </div>
-      {/* 콘텐츠 영역 */}
-      <div className="p-4">
-        <h3
-          className="text-lg font-semibold line-clamp-2 mb-2 cursor-pointer"
-          onClick={() => onClick(article)}
-        >
-          {article.title}
-        </h3>
-      </div>
+const BookmarkedArticleItem = ({ article, onBookmark }) => (
+  <div className="bg-white rounded-lg shadow-md overflow-hidden relative">
+    {/* Bookmark Icon */}
+    <div
+      className="absolute top-2 right-2 text-yellow-500 cursor-pointer text-xl"
+      onClick={() => onBookmark(article.id)}
+    >
+      ★
     </div>
-  );
-}
+
+    {/* Article Image */}
+    <img
+      src={article.image}
+      alt={article.title}
+      className="w-full h-48 object-cover"
+    />
+
+    {/* Article Details */}
+    <div className="p-4">
+      <h2 className="text-lg font-semibold">{article.title}</h2>
+      <p className="text-sm text-gray-600">By {article.author}</p>
+      <a
+        href={article.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 hover:underline mt-2 block"
+      >
+        Read more
+      </a>
+    </div>
+  </div>
+);
 
 BookmarkedArticleItem.propTypes = {
-  article: PropTypes.object.isRequired,
-  onClick: PropTypes.func.isRequired,
+  article: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    // Add other fields if necessary
+  }).isRequired,
   onBookmark: PropTypes.func.isRequired,
-  isBookmarked: PropTypes.bool.isRequired,
 };
+
+export default BookmarkedArticleItem;
