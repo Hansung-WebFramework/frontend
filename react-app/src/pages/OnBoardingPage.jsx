@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import NavBar from '../components/layout/Navbar';
 import AnalysisChart from '../components/ui/Analysischart';
 import styles from './OnBoardingPage.module.css';
