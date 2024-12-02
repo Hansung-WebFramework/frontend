@@ -1,7 +1,6 @@
 import { HttpResponse, http } from "msw";
 import dummy from "./dummy.json";
 import analysis from "./analysis.json";
-import newsDummy from "./newsDummy.json";
 
 export const handlers = [
   http.get("/dummy", () => {
@@ -14,6 +13,8 @@ export const handlers = [
   }),
 
   http.get("/bookmarks", () => {
-    return HttpResponse.json(newsDummy);
+    return HttpResponse.json(
+      analysis.filter((article) => article.isBookmarked)
+    );
   }),
 ];
