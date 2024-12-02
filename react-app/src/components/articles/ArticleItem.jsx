@@ -1,44 +1,32 @@
-// src/components/articles/ArticleItem.jsx
-import PropTypes from "prop-types";
-import Bookmark from "../bookmark/Bookmark";
+import PropTypes from 'prop-types';
 
-const ArticleItem = ({ article, isBookmarked, onBookmark, onClick }) => {
-  return (
-    <div
-      className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow relative"
-      onClick={() => onClick(article)}
-    >
-      {/* Bookmark Icon */}
-      <Bookmark
-        isBookmarked={isBookmarked}
-        onToggle={() => onBookmark(article.id)}
-      />
-
-      {/* Article Image with Hover Effect */}
-      <img
-        src={article.image}
-        alt={article.title}
-        className="w-full h-32 object-cover transition-transform duration-300 transform hover:scale-105"
-      />
-
-      {/* Article Title */}
-      <div className="p-3">
-        <h3 className="font-medium text-sm text-gray-900">{article.title}</h3>
-      </div>
-    </div>
-  );
-};
+export default function ArticleItem({ article, onClick }) {
+    return (
+        <div
+            className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-xl hover:scale-105 transform transition-all duration-300"
+            onClick={() => onClick(article)}
+        >
+            <div className="relative w-full h-[200px]">
+                <img
+                    src={article.originalArticle.image}
+                    alt={article.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+            </div>
+            <div className="p-3">
+                <h3 className="font-medium text-sm text-gray-900">{article.title}</h3>
+            </div>
+        </div>
+    );
+}
 
 ArticleItem.propTypes = {
-  article: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    // Add other fields if necessary
-  }).isRequired,
-  isBookmarked: PropTypes.bool.isRequired,
-  onBookmark: PropTypes.func.isRequired,
-  onClick: PropTypes.func.isRequired,
+    article: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        originalArticle: PropTypes.shape({
+            image: PropTypes.string.isRequired,
+        }).isRequired,
+    }).isRequired,
+    onClick: PropTypes.func.isRequired,
 };
-
-export default ArticleItem;
