@@ -41,7 +41,8 @@
       "description": "Ukraine's drone strikes are reaching deep into Russian territory, while Russian forces advance near the strategic eastern Ukrainian town of Pokrovsk, escalating tensions between the two nations.",
       "extraDetails": "The international community is urging an immediate ceasefire as concerns grow over civilian casualties and further destabilization in the region.",
       "link": "https://edition.cnn.com/2024/11/27/europe/ukraine-drones-russian-advances-pokrovsk-intl/index.html"
-    }
+    },
+    "isBookmarked": true
   },
   {
     "id": "4",
@@ -70,7 +71,8 @@
       "description": "Advanced satellite technology has detected substantial methane leaks, an invisible but potent greenhouse gas, from industrial sources, posing serious challenges in the fight against global warming.",
       "extraDetails": "The discovery coincides with the COP29 climate summit, emphasizing the critical role of international cooperation and technological advancements in reducing methane emissions.",
       "link": "https://media.cnn.com/api/v1/images/stellar/prod/methanesat-rendering-copy-2.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp"
-    }
+    },
+    "isBookmarked": false
   },
   {
     "id": "6",
@@ -99,7 +101,8 @@
       "description": "The Aditya-L1 mission has captured critical data on coronal mass ejections (CMEs), massive fireballs from the Sun's corona, which can travel at speeds of up to 3,000 km/s and pose significant risks to Earth's power grids and satellites.",
       "extraDetails": "This finding, made possible by India's advanced coronagraph Velc, provides a 24/7 view of the Sun's corona, allowing scientists to track the genesis and trajectory of CMEs in real-time.",
       "link": "https://www.bbc.com/news/articles/c0qdy5dg7v7o"
-    }
+    },
+    "isBookmarked": true
   },
   {
     "id": "8",
@@ -128,7 +131,8 @@
       "description": "In light of recent political developments, Pope Francis has expressed concerns about the direction of global leadership, particularly focusing on the potential return of former President Donald Trump to office.",
       "extraDetails": "The Pope highlighted the need for leaders to prioritize humanitarian values and cautioned against policies that may foster division.",
       "link": "https://edition.cnn.com/2024/11/27/europe/pope-francis-second-trump-administration-intl/index.html"
-    }
+    },
+    "isBookmarked": true
   },
   {
     "id": "10",
