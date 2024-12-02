@@ -1,0 +1,32 @@
+/* BookmarkPage.module.css */
+.title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* 카드 간 간격 */
+  padding: 20px; /* 전체 패딩 */
+  padding-left: 100px; /* 왼쪽 여백 */
+  padding-right: 100px; /* 오른쪽 여백 */
+  box-sizing: border-box; /* 패딩이 요소 크기에 포함되도록 설정 */
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr); /* 태블릿에서 2열 */
+    padding-left: 20px; /* 왼쪽 여백 조정 */
+    padding-right: 20px; /* 오른쪽 여백 조정 */
+  }
+}
+
+@media (max-width: 480px) {
+  .gridContainer {
+    grid-template-columns: 1fr; /* 모바일에서 1열 */
+    padding-left: 10px; /* 모바일에서 좁은 여백 */
+    padding-right: 10px; /* 모바일에서 좁은 여백 */
+  }
+}

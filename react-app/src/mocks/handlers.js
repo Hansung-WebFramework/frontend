@@ -15,6 +15,12 @@ export const handlers = [
     return HttpResponse.json(analysis);
   }),
 
+  http.get("/bookmarks", () => {
+    return HttpResponse.json(
+      analysis.filter((article) => article.isBookmarked)
+    );
+  }),
+
   // 새로 추가: /api/stats 엔드포인트
   http.get("/api/stats", () => {
     return HttpResponse.json({
