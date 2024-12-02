@@ -1,26 +1,37 @@
 import PropTypes from "prop-types";
-import ArticleItem from "../articles/ArticleItem";
 import Bookmark from "./Bookmark";
 
-const BookmarkArticleItem = ({
+export default function BookmarkArticleItem({
   article,
   isBookmarked,
   onToggleBookmark,
   onClick,
-}) => {
+}) {
   return (
-    <div className="relative" onClick={onClick}>
-      {/* 기존 ArticleItem 컴포넌트 */}
-      <ArticleItem article={article} />
-
-      {/* Bookmark 컴포넌트 */}
-      <Bookmark
-        isBookmarked={isBookmarked}
-        onToggle={() => onToggleBookmark(article.id)}
-      />
+    <div
+      className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-xl hover:scale-105 transform transition-all duration-300 relative"
+      onClick={() => onClick(article)}
+    >
+      <div className="relative w-full h-[200px]">
+        <img
+          src={article.originalArticle.image}
+          alt={article.title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* 북마크 아이콘 */}
+        <Bookmark
+          isBookmarked={isBookmarked}
+          onToggle={() => onToggleBookmark(article.id)}
+        />
+      </div>
+      <div className="p-3">
+        <h3 className="font-medium text-sm text-gray-900 line-clamp-2">
+          {article.title}
+        </h3>
+      </div>
     </div>
   );
-};
+}
 
 BookmarkArticleItem.propTypes = {
   article: PropTypes.shape({
@@ -35,5 +46,3 @@ BookmarkArticleItem.propTypes = {
   onToggleBookmark: PropTypes.func.isRequired,
   onClick: PropTypes.func, // 추가된 부분
 };
-
-export default BookmarkArticleItem;
