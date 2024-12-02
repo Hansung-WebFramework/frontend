@@ -11,7 +11,8 @@
       "description": "In a recent public statement, Elon Musk has suggested that government employees are unfairly targeted, which could further strain his already contentious relationships with various regulatory bodies.",
       "extraDetails": "This statement comes amid ongoing scrutiny from several government agencies, which have been closely monitoring Musk's corporate activities and public statements.",
       "link": "https://edition.cnn.com/2024/11/27/business/elon-musk-government-employees-targets/index.html"
-    }
+    },
+    "isBookmarked": true
   },
   {
     "id": "2",
@@ -25,7 +26,8 @@
       "description": "Artificial intelligence is playing a transformative role in cancer treatment, accelerating the development of new therapies and improving diagnostic accuracy.",
       "extraDetails": "Experts believe AI will significantly reduce the time required for drug discovery, leading to more effective and personalized treatments for patients worldwide.",
       "link": "https://www.bbc.com/news/articles/c9dlz3y0pl0o"
-    }
+    },
+    "isBookmarked": true
   },
   {
     "id": "3",
@@ -53,7 +55,8 @@
       "description": "Johnny Somali, whose real name is Ramsey Khalid Ismael, has been banned from leaving South Korea amidst an investigation into his disruptive behavior and alleged drug-related offenses.",
       "extraDetails": "Authorities have received multiple complaints about his provocative stunts, including a recent live-streamed altercation, with legal experts suggesting a possible sentence of up to 10 years in prison if convicted.",
       "link": "https://media.cnn.com/api/v1/images/stellar/prod/img-7819-20241121031103327.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp"
-    }
+    },
+    "isBookmarked": true
   },
   {
     "id": "5",
@@ -81,7 +84,8 @@
       "description": "Analysis of ancient Egyptian 'Bes' mugs has revealed physical traces of hallucinogens, suggesting their use in religious ceremonies in ancient Egypt.",
       "extraDetails": "This discovery provides new insights into the religious practices and rituals of ancient Egypt.",
       "link": "https://edition.cnn.com/2024/11/26/science/egyptian-bes-mug-hallucinogens/index.html"
-    }
+    },
+    "isBookmarked": false
   },
   {
     "id": "7",
@@ -109,7 +113,8 @@
       "description": "The FTC's investigation focuses on whether Microsoft is using its market dominance to enforce restrictive software licensing terms and practices that hinder competition in cloud computing and other areas.",
       "extraDetails": "This probe, approved by FTC Chair Lina Khan, is also examining Microsoft's cybersecurity and AI practices, as competitors like Amazon and Google raise concerns about unfair business practices.",
       "link": "https://edition.cnn.com/2024/11/27/business/microsoft-ftc-investigation/index.html"
-    }
+    },
+    "isBookmarked": false
   },
   {
     "id": "9",
@@ -137,6 +142,7 @@
       "description": "Equatic plans to build the world's largest ocean-based carbon removal plant to extract CO2 from seawater. While the initiative aims to address climate change, some scientists question its environmental impact and overall efficacy.",
       "extraDetails": "The project involves using electrolysis to remove CO2 from seawater, producing hydrogen as a byproduct. Critics argue that altering ocean chemistry on such a scale could have unforeseen ecological consequences.",
       "link": "https://edition.cnn.com/2024/04/21/climate/equatic-ocean-carbon-removal-plant-climate-intl/index.html"
-    }
+    },
+    "isBookmarked": true
   }
 ]
