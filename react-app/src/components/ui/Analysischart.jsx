@@ -1,6 +1,6 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import PropTypes from 'prop-types';  
 
 export default function AnalysisChart({ data }) {
   const navigate = useNavigate();
@@ -77,3 +77,8 @@ export default function AnalysisChart({ data }) {
     </div>
   );
 }
+
+// Add prop validation
+AnalysisChart.propTypes = {
+  data: PropTypes.array.isRequired,  // Add prop type validation for 'data'
+};

@@ -21,7 +21,7 @@
       "accuracy": 47,
       "originalArticle": {
         "title": "AI Revolutionizing Cancer Treatment",
-        "image": "/src/assets/images/news2.png",
+        "image": "https://ichef.bbci.co.uk/news/1536/cpsprodpb/3240/live/ab27fde0-acce-11ef-bdf5-b7cb2fa86e10.jpg.webp",
         "description": "Artificial intelligence is playing a transformative role in cancer treatment, accelerating the development of new therapies and improving diagnostic accuracy.",
         "extraDetails": "Experts believe AI will significantly reduce the time required for drug discovery, leading to more effective and personalized treatments for patients worldwide.",
         "link": "https://www.bbc.com/news/articles/c9dlz3y0pl0o"
@@ -52,7 +52,7 @@
         "image": "/src/assets/images/news4.png",
         "description": "Johnny Somali, whose real name is Ramsey Khalid Ismael, has been banned from leaving South Korea amidst an investigation into his disruptive behavior and alleged drug-related offenses.",
         "extraDetails": "Authorities have received multiple complaints about his provocative stunts, including a recent live-streamed altercation, with legal experts suggesting a possible sentence of up to 10 years in prison if convicted.",
-        "link": "https://edition.cnn.com/2024/11/27/asia/johnny-somali-prison-south-korea-hnk/index.html"
+        "link": "https://media.cnn.com/api/v1/images/stellar/prod/img-7819-20241121031103327.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp"
       }
     },
     {
@@ -66,7 +66,7 @@
         "image": "/src/assets/images/news5.png",
         "description": "Advanced satellite technology has detected substantial methane leaks, an invisible but potent greenhouse gas, from industrial sources, posing serious challenges in the fight against global warming.",
         "extraDetails": "The discovery coincides with the COP29 climate summit, emphasizing the critical role of international cooperation and technological advancements in reducing methane emissions.",
-        "link": "https://edition.cnn.com/2024/11/27/climate/methane-polluters-satellite/index.html"
+        "link": "https://media.cnn.com/api/v1/images/stellar/prod/methanesat-rendering-copy-2.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp"
       }
     },
     {
@@ -77,7 +77,7 @@
       "accuracy": 76,
       "originalArticle": {
         "title": "Hallucinogens Found in Ancient Egyptian 'Bes' Mug",
-        "image": "/src/assets/images/news6.png",
+        "image": "https://media.cnn.com/api/v1/images/stellar/prod/close-up-bes-mug-photo-by-cassidy-delamarter.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp",
         "description": "Analysis of ancient Egyptian 'Bes' mugs has revealed physical traces of hallucinogens, suggesting their use in religious ceremonies in ancient Egypt.",
         "extraDetails": "This discovery provides new insights into the religious practices and rituals of ancient Egypt.",
         "link": "https://edition.cnn.com/2024/11/26/science/egyptian-bes-mug-hallucinogens/index.html"
@@ -91,7 +91,7 @@
       "accuracy": 91,
       "originalArticle": {
         "title": "Why India's Latest Sun Mission Finding is Crucial for the World",
-        "image": "/src/assets/images/news7.png",
+        "image": "https://ichef.bbci.co.uk/news/1536/cpsprodpb/efe9/live/cc0cd470-a88e-11ef-8725-7db796b893b0.jpg.webp",
         "description": "The Aditya-L1 mission has captured critical data on coronal mass ejections (CMEs), massive fireballs from the Sun's corona, which can travel at speeds of up to 3,000 km/s and pose significant risks to Earth's power grids and satellites.",
         "extraDetails": "This finding, made possible by India's advanced coronagraph Velc, provides a 24/7 view of the Sun's corona, allowing scientists to track the genesis and trajectory of CMEs in real-time.",
         "link": "https://www.bbc.com/news/articles/c0qdy5dg7v7o"
@@ -105,7 +105,7 @@
       "accuracy": 94,
       "originalArticle": {
         "title": "FTC Launches Antitrust Investigation into Microsoft",
-        "image": "/src/assets/images/news8.png",
+        "image": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2159867247-copy.jpg?c=16x9&q=f_webp",
         "description": "The FTC's investigation focuses on whether Microsoft is using its market dominance to enforce restrictive software licensing terms and practices that hinder competition in cloud computing and other areas.",
         "extraDetails": "This probe, approved by FTC Chair Lina Khan, is also examining Microsoft's cybersecurity and AI practices, as competitors like Amazon and Google raise concerns about unfair business practices.",
         "link": "https://edition.cnn.com/2024/11/27/business/microsoft-ftc-investigation/index.html"
@@ -119,7 +119,7 @@
       "accuracy": 83,
       "originalArticle": {
         "title": "Pope Francis Expresses Concerns Over Second Trump Administration",
-        "image": "/src/assets/images/news9.png",
+        "image": "https://media.cnn.com/api/v1/images/stellar/prod/2017-05-24t075740z-988405504-rc141c14d900-rtrmadp-3-usa-trump-pope.JPG?c=16x9&q=h_653,w_1160,c_fill/f_webp",
         "description": "In light of recent political developments, Pope Francis has expressed concerns about the direction of global leadership, particularly focusing on the potential return of former President Donald Trump to office.",
         "extraDetails": "The Pope highlighted the need for leaders to prioritize humanitarian values and cautioned against policies that may foster division.",
         "link": "https://edition.cnn.com/2024/11/27/europe/pope-francis-second-trump-administration-intl/index.html"
@@ -133,7 +133,7 @@
       "accuracy": 94,
       "originalArticle": {
         "title": "Can this ocean-based carbon plant help save the world? Some scientists are skeptical",
-        "image": "/src/assets/images/news10.png",
+        "image": "https://media.cnn.com/api/v1/images/stellar/prod/equatic-beach-equip-trio-feb-26-hr-ed-6-day-a1.jpg?q=w_2000,c_fill/f_webp",
         "description": "Equatic plans to build the world's largest ocean-based carbon removal plant to extract CO2 from seawater. While the initiative aims to address climate change, some scientists question its environmental impact and overall efficacy.",
         "extraDetails": "The project involves using electrolysis to remove CO2 from seawater, producing hydrogen as a byproduct. Critics argue that altering ocean chemistry on such a scale could have unforeseen ecological consequences.",
         "link": "https://edition.cnn.com/2024/04/21/climate/equatic-ocean-carbon-removal-plant-climate-intl/index.html"
