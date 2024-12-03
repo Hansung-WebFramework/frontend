@@ -1,13 +1,25 @@
 import { useNavigate } from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import Loader from '../Loader'; // Loader 컴포넌트
 
 export default function AnalysisChart({ data }) {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false); // 로딩 상태 추가
   const currentDate = new Date();
+  
+  const handleButtonClick = () => {
+    setLoading(true); // 로딩 시작
+    setTimeout(() => {
+      navigate('/IdentifiedArticlesPage');
+      // 로딩 상태를 해제하지 않고 다음 페이지에서 로딩 상태를 관리함
+    }, 1500);
+  };
 
   return (
     <div style={{ width: '100%', margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+      {loading && <Loader />}
       {/* 제목 섹션 */}
       <div
         style={{
@@ -49,7 +61,7 @@ export default function AnalysisChart({ data }) {
       {/* 버튼 */}
       <div style={{ marginBottom: '20px', textAlign: 'right', marginRight: '100px' }}>
         <button
-          onClick={() => navigate('/IdentifiedArticlesPage')}
+          onClick={handleButtonClick}
           style={{
             backgroundColor: 'transparent',
             border: 'none',
