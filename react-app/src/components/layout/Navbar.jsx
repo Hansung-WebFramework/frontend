@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSearch();
     }
   };
@@ -38,7 +38,7 @@ export default function Navbar() {
               <Menu className="h-6 w-6" />
               <h1 className="text-2xl font-bold">
                 <button
-                  onClick={() => handleNavigation('/')}
+                  onClick={() => handleNavigation("/")}
                   className="text-white hover:text-blue-300"
                 >
                   Newsy
@@ -65,13 +65,13 @@ export default function Navbar() {
 
             <div className="flex items-center gap-6">
               <button
-                onClick={() => handleNavigation('/BookmarkPage')}
+                onClick={() => handleNavigation("/BookmarkPage")}
                 className="text-white hover:text-blue-300"
               >
                 Bookmark
               </button>
               <button
-                onClick={() => handleNavigation('/IdentifiedArticlesPage')}
+                onClick={() => handleNavigation("/IdentifiedArticlesPage")}
                 className="text-white hover:text-blue-300"
               >
                 Articles
@@ -79,7 +79,7 @@ export default function Navbar() {
               <Bell className="h-6 w-6" />
               <div className="relative w-10 h-10 rounded-full overflow-hidden bg-gray-300">
                 <img
-                  src="/placeholder.svg?height=40&width=40"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWgg1mjdrrer5asSh0TiJKDkdg40UEHc3uw&s?height=40&width=40"
                   alt="User Avatar"
                   className="w-full h-full object-cover"
                 />
