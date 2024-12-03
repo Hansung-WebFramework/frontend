@@ -69,8 +69,8 @@ export default function IdentifiedArticlesPage() {
                                         key={page + 1}
                                         onClick={() => handlePageChange(page + 1)}
                                         className={`px-4 py-2 mx-1 rounded-lg ${currentPage === page + 1
-                                                ? 'bg-blue-500 text-white'
-                                                : 'bg-gray-200'
+                                            ? 'bg-blue-500 text-white'
+                                            : 'bg-gray-200'
                                             }`}
                                     >
                                         {page + 1}

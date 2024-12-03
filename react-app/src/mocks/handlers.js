@@ -7,24 +7,23 @@ import { chartMockData } from "./AnalysischartMock.js"; // 차트 데이터 가�
 let analysisData = [...analysis];
 
 export const handlers = [
-  // 기존 /dummy 엔드포인트
+  // GET /dummy 엔드포인트
   http.get("/dummy", () => {
     return HttpResponse.json(dummy);
   }),
 
-  // GET /analysis
+  // GET /analysis 엔드포인트
   http.get("/analysis", () => {
     return HttpResponse.json(analysisData);
   }),
 
-  // GET /bookmarks
+  // GET /bookmarks 엔드포인트
   http.get("/bookmarks", () => {
-    return HttpResponse.json(
-      analysisData.filter((article) => article.isBookmarked)
-    );
+    const bookmarkedArticles = analysisData.filter((article) => article.isBookmarked);
+    return HttpResponse.json(bookmarkedArticles);
   }),
 
-  // POST /bookmarks: 북마크 추가
+  // POST /bookmarks 엔드포인트: 북마크 추가
   http.post("/bookmarks", async (req) => {
     const { id } = await req.json();
     analysisData = analysisData.map((article) =>
@@ -33,7 +32,7 @@ export const handlers = [
     return HttpResponse.json({ success: true });
   }),
 
-  // DELETE /bookmarks/:id: 북마크 제거
+  // DELETE /bookmarks/:id 엔드포인트: 북마크 제거
   http.delete("/bookmarks/:id", (req) => {
     const { id } = req.params;
     analysisData = analysisData.map((article) =>
@@ -42,7 +41,7 @@ export const handlers = [
     return HttpResponse.json({ success: true });
   }),
 
-  // 새로 추가: /api/stats 엔드포인트
+  // GET /api/stats 엔드포인트
   http.get("/api/stats", () => {
     return HttpResponse.json({
       articles: onboardingMock.articles,
@@ -51,7 +50,7 @@ export const handlers = [
     });
   }),
 
-  // 새로 추가: /api/chart 엔드포인트
+  // GET /api/chart 엔드포인트
   http.get("/api/chart", () => {
     return HttpResponse.json(chartMockData);
   }),
