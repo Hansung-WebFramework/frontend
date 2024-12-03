@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
+import Bookmark from '../bookmark/Bookmark';
 
-export default function ArticleItem({ article, onClick }) {
+export default function ArticleItem({ article, isBookmarked, onToggleBookmark, onClick }) {
     return (
         <div
             className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-xl hover:scale-105 transform transition-all duration-300"
@@ -11,6 +12,10 @@ export default function ArticleItem({ article, onClick }) {
                     src={article.originalArticle.image}
                     alt={article.title}
                     className="absolute inset-0 w-full h-full object-cover"
+                />
+                <Bookmark
+                    isBookmarked={isBookmarked}
+                    onToggle={() => onToggleBookmark(article.id)}
                 />
             </div>
             <div className="p-3">
@@ -28,5 +33,7 @@ ArticleItem.propTypes = {
             image: PropTypes.string.isRequired,
         }).isRequired,
     }).isRequired,
+    isBookmarked: PropTypes.bool.isRequired,
+    onToggleBookmark: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
 };

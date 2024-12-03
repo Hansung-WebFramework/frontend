@@ -21,8 +21,16 @@ export default function IdentifiedArticlesPage() {
                     throw new Error('Failed to fetch articles');
                 }
                 const data = await res.json();
-                setArticles(data);
-                setSelectedArticle(data[0]);
+
+                // 로컬 스토리지에서 북마크 상태 로드
+                const bookmarkedIds = JSON.parse(localStorage.getItem('bookmarkedIds')) || [];
+                const updatedData = data.map(article => ({
+                    ...article,
+                    isBookmarked: bookmarkedIds.includes(article.id),
+                }));
+
+                setArticles(updatedData);
+                setSelectedArticle(updatedData[0]);
             } catch (error) {
                 console.error('Error fetching articles:', error);
             } finally {
@@ -45,6 +53,24 @@ export default function IdentifiedArticlesPage() {
         setCurrentPage(page);
     };
 
+    const handleToggleBookmark = (articleId) => {
+        setArticles((prevArticles) => {
+            const updatedArticles = prevArticles.map((article) =>
+                article.id === articleId
+                    ? { ...article, isBookmarked: !article.isBookmarked }
+                    : article
+            );
+
+            // 로컬 스토리지에 북마크 상태 저장
+            const bookmarkedIds = updatedArticles
+                .filter(article => article.isBookmarked)
+                .map(article => article.id);
+            localStorage.setItem('bookmarkedIds', JSON.stringify(bookmarkedIds));
+
+            return updatedArticles;
+        });
+    };
+
     if (loading) {
         return <Loader />;
     }
@@ -63,6 +89,7 @@ export default function IdentifiedArticlesPage() {
                             <SelectedArticle
                                 article={selectedArticle}
                                 onClick={() => handleArticleClick(selectedArticle)}
+                                onToggleBookmark={handleToggleBookmark}
                             />
                         )}
                     </div>
@@ -70,6 +97,7 @@ export default function IdentifiedArticlesPage() {
                         <ArticleList
                             articles={currentArticles}
                             onArticleSelect={handleArticleSelect}
+                            onToggleBookmark={handleToggleBookmark}
                         />
                         <div className="flex justify-center mt-4">
                             {[...Array(Math.ceil(articles.length / articlesPerPage)).keys()].map(
