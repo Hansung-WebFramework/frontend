@@ -18,7 +18,10 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-6">
             <Menu className="h-6 w-6" />
-            <h1 className="text-2xl font-bold"> Newsy</h1>
+            <h1 className="text-2xl font-bold">
+              <Link to="/">
+                Newsy
+              </Link></h1>
           </div>
 
           <div className="flex-1 max-w-2xl mx-6">
@@ -38,10 +41,10 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-6">
-            <Link to="/scrap" className="text-white hover:text-blue-300">
+            <Link to="/BookmarkPage" className="text-white hover:text-blue-300">
               Bookmark
             </Link>
-            <Link to="/analyze" className="text-white hover:text-blue-300">
+            <Link to="/IdentifiedArticlesPage" className="text-white hover:text-blue-300">
               Analyze Chart
             </Link>
             <Bell className="h-6 w-6" />
