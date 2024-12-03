@@ -1,0 +1,102 @@
+[
+  {
+    "id": "1",
+    "title": "Elon Musk’s massive, multibillion-dollar Tesla pay package was blocked by a judge again",
+    "summary": "A Delaware court invalidated Elon Musk's $56 billion Tesla compensation, citing board independence issues and insufficient shareholder disclosure. Despite a 2024 reapproval, procedural flaws remained unresolved. Tesla and Musk plan to appeal, potentially leading to higher shareholder costs.",
+    "summary-kor": "델라웨어 법원은 테슬라 이사회 독립성과 정보 공개 부족을 이유로 머스크의 568억 달러 보상 패키지를 무효화했습니다. 2024년 재승인에도 초기 절차 문제는 해결되지 않았습니다. 테슬라와 머스크는 항소를 계획 중이며 주주 비용 증가 가능성이 있습니다.",
+    "accuracy": 87,
+    "originalArticle": {
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/2024-11-19t112000z-427445120-rc2f4bazdq7j-rtrmadp-3-usa-trump-federal-workers.JPG?c=16x9&q=h_653,w_1160,c_fill/f_webp"
+    }
+  },
+  {
+    "id": "2",
+    "title": "AI Revolutionizing Cancer Treatment",
+    "summary": "AI technology is bringing revolutionary changes in cancer treatment and accelerating the development of new treatments.",
+    "summary-kor": "AI 기술이 암 치료를 혁신하며 새로운 치료법 개발 속도를 크게 향상시키고 있습니다.",
+    "accuracy": 47,
+    "originalArticle": {
+      "image": "https://ichef.bbci.co.uk/news/1536/cpsprodpb/3240/live/ab27fde0-acce-11ef-bdf5-b7cb2fa86e10.jpg.webp"
+    }
+  },
+  {
+    "id": "3",
+    "title": "Ukraine’s exhausted troops in Russia told to cling on and wait for Trump",
+    "summary": "Ukrainian soldiers in Russia's Kursk region face relentless bombardment and extreme fatigue, compounded by Russian forces reclaiming territory. Commanders have ordered troops to hold their positions until the U.S. presidential inauguration in 2025, hoping for potential negotiation shifts.",
+    "summary-kor": "러시아 쿠르스크 지역에 있는 우크라이나 군인들은 끊임없는 포격과 극심한 피로에 시달리고 있으며, 러시아군이 영토를 점진적으로 되찾는 상황으로 어려움이 더욱 가중되고 있습니다. 지휘관들은 2025년 미국 대통령 취임까지 부대가 현 위치를 유지하도록 명령하며, 이를 통해 협상에 유리한 변화가 있기를 기대하고 있습니다.",
+    "accuracy": 92,
+    "originalArticle": {
+      "image": "https://ichef.bbci.co.uk/news/1536/cpsprodpb/23bc/live/1a257a30-b0ce-11ef-a6ec-dd05787bd0e4.jpg.webp"
+    }
+  },
+  {
+    "id": "4",
+    "title": "American Livestreamer Johnny Somali Faces Legal Troubles in South Korea",
+    "summary": "Johnny Somali, an American livestreamer known for his disruptive content, is barred from leaving South Korea as authorities investigate charges of obstruction of business and alleged drug use.",
+    "summary-kor": "파괴적인 콘텐츠로 유명한 미국인 라이브스트리머 조니 소말리(Johnny Somali)는 당국이 업무방해 및 마약 복용 혐의로 조사를 진행하면서 한국 출국이 금지됐다.",
+    "accuracy": 98,
+    "originalArticle": {
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/img-7819-20241121031103327.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp"
+    }
+  },
+  {
+    "id": "5",
+    "title": "Satellite Reveals Methane Leaks from Major Polluters",
+    "summary": "A cutting-edge satellite reveals significant methane leaks from major polluters, highlighting the urgent need for stricter emission regulations to combat climate change.",
+    "summary-kor": "최첨단 위성을 통해 주요 오염원으로부터 상당한 메탄 누출이 밝혀졌으며, 이는 기후 변화에 대처하기 위해 보다 엄격한 배출 규제가 시급히 필요함을 강조합니다.",
+    "accuracy": 97,
+    "originalArticle": {
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/methanesat-rendering-copy-2.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp"
+    }
+  },
+  {
+    "id": "6",
+    "title": "Hallucinogens Found in Ancient Egyptian 'Bes' Mug",
+    "summary": "Recent research has discovered physical evidence of hallucinogens in ancient Egyptian 'Bes' mugs, confirming longstanding myths and records about their use in Egyptian rituals.",
+    "summary-kor": "최근 연구에서는 고대 이집트의 'Bes' 머그잔에서 환각제의 물리적 증거가 발견되어 이집트 의식에서 환각제 사용에 대한 오랜 신화와 기록이 확인되었습니다.",
+    "accuracy": 76,
+    "originalArticle": {
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/close-up-bes-mug-photo-by-cassidy-delamarter.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp"
+    }
+  },
+  {
+    "id": "7",
+    "title": "Why India's Latest Sun Mission Finding is Crucial for the World",
+    "summary": "India's Aditya-L1 mission has reported its first major findings, providing crucial insights into solar activities like coronal mass ejections (CMEs), which can disrupt Earth's infrastructure and communication systems.",
+    "summary-kor": "인도의 Aditya-L1 태양 탐사 임무가 첫 번째 주요 발견을 보고하며, 태양 코로나 질량 방출(CME)과 같은 태양 활동이 지구의 인프라와 통신 시스템에 미칠 영향을 이해하는 데 중요한 통찰을 제공합니다.",
+    "accuracy": 91,
+    "originalArticle": {
+      "image": "https://ichef.bbci.co.uk/news/1536/cpsprodpb/efe9/live/cc0cd470-a88e-11ef-8725-7db796b893b0.jpg.webp"
+    }
+  },
+  {
+    "id": "8",
+    "title": "FTC Launches Antitrust Investigation into Microsoft",
+    "summary": "The U.S. Federal Trade Commission has initiated a broad antitrust investigation into Microsoft's software licensing and cloud computing practices, scrutinizing potential anti-competitive behavior.",
+    "summary-kor": "미국 연방거래위원회(Federal Trade Commission)는 Microsoft의 소프트웨어 라이선스 및 클라우드 컴퓨팅 관행에 대한 광범위한 독점 금지 조사를 시작하여 잠재적인 반경쟁 행위를 면밀히 조사했습니다.",
+    "accuracy": 94,
+    "originalArticle": {
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2159867247-copy.jpg?c=16x9&q=f_webp"
+    }
+  },
+  {
+    "id": "9",
+    "title": "Pope Francis Expresses Concerns Over Second Trump Administration",
+    "summary": "Pope Francis has voiced apprehensions regarding the potential implications of a second Trump administration, emphasizing the importance of compassion and unity in global leadership.",
+    "summary-kor": "프란치스코 교황은 트럼프 행정부의 재임이 가져올 수 있는 영향에 대해 우려를 표명하며, 세계 지도력에서의 연민과 단합의 중요성을 강조했습니다.",
+    "accuracy": 83,
+    "originalArticle": {
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/2017-05-24t075740z-988405504-rc141c14d900-rtrmadp-3-usa-trump-pope.JPG?c=16x9&q=h_653,w_1160,c_fill/f_webp"
+    }
+  },
+  {
+    "id": "10",
+    "title": "Equatic's Ocean-Based Carbon Removal Plant Raises Environmental Concerns",
+    "summary": "Equatic's initiative to construct the world's largest ocean-based carbon removal plant aims to combat climate change by extracting CO2 from seawater. However, scientists express concerns about potential environmental impacts and the effectiveness of such large-scale interventions.",
+    "summary-kor": "Equatic의 세계 최대 해양 기반 탄소 제거 공장 건설 계획은 해수에서 CO2를 추출하여 기후 변화를 막는 것을 목표로 합니다. 그러나 과학자들은 이러한 대규모 개입의 잠재적 환경 영향과 효과에 대해 우려를 표명하고 있습니다.",
+    "accuracy": 94,
+    "originalArticle": {
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/equatic-beach-equip-trio-feb-26-hr-ed-6-day-a1.jpg?q=w_2000,c_fill/f_webp"
+    }
+  }
+]
