@@ -1,16 +1,16 @@
 [
   {
     "id": "1",
-    "title": "Elon Musk Suggests Government Employees are Targets",
-    "summary": "Elon Musk's recent comments have ignited controversy as he suggests that government employees have been unjust targets, potentially worsening his rapport with regulators.",
-    "summary-kor": "Elon Musk의 최근 발언은 정부 직원이 부당한 표적이 되어 잠재적으로 규제 기관과의 관계를 악화시킬 수 있다고 암시하면서 논란을 불러일으켰습니다.",
+    "title": "Elon Musk’s massive, multibillion-dollar Tesla pay package was blocked by a judge again",
+    "summary": "A Delaware court invalidated Elon Musk's $56 billion Tesla compensation, citing board independence issues and insufficient shareholder disclosure. Despite a 2024 reapproval, procedural flaws remained unresolved. Tesla and Musk plan to appeal, potentially leading to higher shareholder costs.",
+    "summary-kor": "델라웨어 법원은 테슬라 이사회 독립성과 정보 공개 부족을 이유로 머스크의 568억 달러 보상 패키지를 무효화했습니다. 2024년 재승인에도 초기 절차 문제는 해결되지 않았습니다. 테슬라와 머스크는 항소를 계획 중이며 주주 비용 증가 가능성이 있습니다.",
     "accuracy": 87,
     "originalArticle": {
-      "title": "Elon Musk Suggests Government Employees are Targets",
-      "image": "/src/assets/images/news1.png",
-      "description": "In a recent public statement, Elon Musk has suggested that government employees are unfairly targeted, which could further strain his already contentious relationships with various regulatory bodies.",
-      "extraDetails": "This statement comes amid ongoing scrutiny from several government agencies, which have been closely monitoring Musk's corporate activities and public statements.",
-      "link": "https://edition.cnn.com/2024/11/27/business/elon-musk-government-employees-targets/index.html"
+      "title": "Elon Musk’s massive, multibillion-dollar Tesla pay package was blocked by a judge again",
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/2024-11-19t112000z-427445120-rc2f4bazdq7j-rtrmadp-3-usa-trump-federal-workers.JPG?c=16x9&q=h_653,w_1160,c_fill/f_webp",
+      "description": "Elon Musk’s record-breaking pay package for serving as Tesla’s CEO was rejected by a Delaware court, despite being approved by Tesla shareholders at a June meeting.",
+      "extraDetails": "The pay package, now worth around $101 billion based on Tesla’s closing share price Monday, is made up of 303 million Tesla stock options. It had been previously thrown out in January by the same judge, Delaware Chancery Court Chancellor Kathaleen McCormick. The package was worth around $56 billion at the time the judge threw out the package.",
+      "link": "https://edition.cnn.com/2024/12/02/investing/elon-musk-pay-package-rejected/index.html"
     },
     "isBookmarked": true
   },
@@ -31,16 +31,16 @@
   },
   {
     "id": "3",
-    "title": "Ukraine Drone Strikes and Russian Advances Near Pokrovsk",
-    "summary": "Ukraine's drone strikes are reaching deep into Russian territory, while Russian forces advance near the strategic eastern Ukrainian town of Pokrovsk, escalating tensions between the two nations.",
-    "summary-kor": "우크라이나의 드론 공격은 러시아 영토 깊숙한 곳까지 도달하고 있고, 러시아군은 우크라이나 동부의 전략적 도시인 포크롭스크 근처로 진군해 양국 간의 긴장이 고조되고 있습니다.",
+    "title": "Ukraine’s exhausted troops in Russia told to cling on and wait for Trump",
+    "summary": "Ukrainian soldiers in Russia's Kursk region face relentless bombardment and extreme fatigue, compounded by Russian forces reclaiming territory. Commanders have ordered troops to hold their positions until the U.S. presidential inauguration in 2025, hoping for potential negotiation shifts.",
+    "summary-kor": "러시아 쿠르스크 지역에 있는 우크라이나 군인들은 끊임없는 포격과 극심한 피로에 시달리고 있으며, 러시아군이 영토를 점진적으로 되찾는 상황으로 어려움이 더욱 가중되고 있습니다. 지휘관들은 2025년 미국 대통령 취임까지 부대가 현 위치를 유지하도록 명령하며, 이를 통해 협상에 유리한 변화가 있기를 기대하고 있습니다.",
     "accuracy": 92,
     "originalArticle": {
-      "title": "Ukraine Drone Strikes and Russian Advances Near Pokrovsk",
-      "image": "/src/assets/images/news3.png",
-      "description": "Ukraine's drone strikes are reaching deep into Russian territory, while Russian forces advance near the strategic eastern Ukrainian town of Pokrovsk, escalating tensions between the two nations.",
-      "extraDetails": "The international community is urging an immediate ceasefire as concerns grow over civilian casualties and further destabilization in the region.",
-      "link": "https://edition.cnn.com/2024/11/27/europe/ukraine-drones-russian-advances-pokrovsk-intl/index.html"
+      "title": "Ukraine’s exhausted troops in Russia told to cling on and wait for Trump",
+      "image": "https://ichef.bbci.co.uk/news/1536/cpsprodpb/23bc/live/1a257a30-b0ce-11ef-a6ec-dd05787bd0e4.jpg.webp",
+      "description": "The tone is dark, even angry. “The situation is getting worse every day.” “We don’t see the goal. Our land is not here.”",
+      "extraDetails": "Almost four months after Ukrainian troops launched a lightning offensive into the Russian region of Kursk, text messages from soldiers fighting there paint a dismal picture of a battle they don’t properly understand and fear they might be losing.",
+      "link": "https://www.bbc.com/news/articles/cn4x9gz4ylwo"
     },
     "isBookmarked": true
   },
@@ -52,10 +52,10 @@
     "accuracy": 98,
     "originalArticle": {
       "title": "American Livestreamer Johnny Somali Faces Legal Troubles in South Korea",
-      "image": "/src/assets/images/news4.png",
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/img-7819-20241121031103327.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp",
       "description": "Johnny Somali, whose real name is Ramsey Khalid Ismael, has been banned from leaving South Korea amidst an investigation into his disruptive behavior and alleged drug-related offenses.",
       "extraDetails": "Authorities have received multiple complaints about his provocative stunts, including a recent live-streamed altercation, with legal experts suggesting a possible sentence of up to 10 years in prison if convicted.",
-      "link": "https://media.cnn.com/api/v1/images/stellar/prod/img-7819-20241121031103327.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp"
+      "link": "https://edition.cnn.com/2024/11/27/asia/johnny-somali-prison-south-korea-hnk/index.html"
     },
     "isBookmarked": true
   },
@@ -67,10 +67,10 @@
     "accuracy": 97,
     "originalArticle": {
       "title": "Satellite Reveals Methane Leaks from Major Polluters",
-      "image": "/src/assets/images/news5.png",
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/methanesat-rendering-copy-2.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp",
       "description": "Advanced satellite technology has detected substantial methane leaks, an invisible but potent greenhouse gas, from industrial sources, posing serious challenges in the fight against global warming.",
       "extraDetails": "The discovery coincides with the COP29 climate summit, emphasizing the critical role of international cooperation and technological advancements in reducing methane emissions.",
-      "link": "https://media.cnn.com/api/v1/images/stellar/prod/methanesat-rendering-copy-2.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp"
+      "link": "https://edition.cnn.com/2024/11/27/climate/methane-polluters-satellite/index.html"
     },
     "isBookmarked": false
   },
