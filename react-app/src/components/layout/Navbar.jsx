@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Search, Menu, Bell } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Loader from "../Loader";
 
 export default function Navbar() {
@@ -11,6 +11,12 @@ export default function Navbar() {
   const handleSearch = () => {
     if (searchQuery.trim()) {
       navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
     }
   };
 
@@ -48,6 +54,7 @@ export default function Navbar() {
                   className="w-full px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={handleKeyDown}
                 />
                 <Search
                   className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/50 cursor-pointer"
