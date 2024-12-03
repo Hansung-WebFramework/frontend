@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../components/layout/Navbar";
@@ -34,6 +34,17 @@ const BookmarkPage = () => {
     navigate(`/AnalysisPage/${articleId}`); // AnalysisPage로 이동
   };
 
+  const handleToggleBookmark = useCallback(async (articleId) => {
+    try {
+      await axios.delete(`/bookmarks/${String(articleId)}`);
+      setArticles((prev) =>
+        prev.filter((article) => article.id !== String(articleId))
+      ); // 수정된 부분
+    } catch (error) {
+      console.error("Error removing bookmark:", error);
+    }
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -44,12 +55,7 @@ const BookmarkPage = () => {
             article={article}
             isBookmarked={true}
             onClick={() => handleNavigateToAnalysis(article.id)} // 페이지 이동 핸들러 전달
-            onToggleBookmark={() => {
-              // 북마크 제거 기능
-              setArticles((prev) =>
-                prev.filter((item) => item.id !== article.id)
-              );
-            }}
+            onToggleBookmark={() => handleToggleBookmark(article.id)} // 북마크 제거 핸들러 전달
           />
         ))}
       </div>
