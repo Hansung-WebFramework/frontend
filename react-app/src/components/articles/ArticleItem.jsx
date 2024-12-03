@@ -15,7 +15,7 @@ export default function ArticleItem({ article, isBookmarked, onToggleBookmark, o
                 />
                 <Bookmark
                     isBookmarked={isBookmarked}
-                    onToggle={() => onToggleBookmark(article.id)}
+                    onToggle={onToggleBookmark}
                 />
             </div>
             <div className="p-3">
@@ -26,13 +26,7 @@ export default function ArticleItem({ article, isBookmarked, onToggleBookmark, o
 }
 
 ArticleItem.propTypes = {
-    article: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        originalArticle: PropTypes.shape({
-            image: PropTypes.string.isRequired,
-        }).isRequired,
-    }).isRequired,
+    article: PropTypes.object.isRequired,
     isBookmarked: PropTypes.bool.isRequired,
     onToggleBookmark: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,

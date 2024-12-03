@@ -1,45 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import SelectedArticle from '../components/articles/SelectedArticle';
 import ArticleList from '../components/articles/ArticleList';
 import Loader from '../components/Loader';
+import { ArticleContext } from '../contexts/ArticleContext';
 
 export default function IdentifiedArticlesPage() {
-    const [articles, setArticles] = useState([]);
+    const { articles, loading, updateBookmark } = useContext(ArticleContext);
     const [selectedArticle, setSelectedArticle] = useState(null);
-    const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const articlesPerPage = 4;
     const navigate = useNavigate();
 
+    // 컴포넌트가 마운트될 때 첫 번째 기사를 선택
     useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                const res = await fetch('/analysis');
-                if (!res.ok) {
-                    throw new Error('Failed to fetch articles');
-                }
-                const data = await res.json();
-
-                // 로컬 스토리지에서 북마크 상태 로드
-                const bookmarkedIds = JSON.parse(localStorage.getItem('bookmarkedIds')) || [];
-                const updatedData = data.map(article => ({
-                    ...article,
-                    isBookmarked: bookmarkedIds.includes(article.id),
-                }));
-
-                setArticles(updatedData);
-                setSelectedArticle(updatedData[0]);
-            } catch (error) {
-                console.error('Error fetching articles:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchArticles();
-    }, []);
+        if (articles.length > 0) {
+            setSelectedArticle(articles[0]);
+        }
+    }, [articles]);
 
     const handleArticleSelect = (article) => {
         setSelectedArticle(article);
@@ -51,24 +30,6 @@ export default function IdentifiedArticlesPage() {
 
     const handlePageChange = (page) => {
         setCurrentPage(page);
-    };
-
-    const handleToggleBookmark = (articleId) => {
-        setArticles((prevArticles) => {
-            const updatedArticles = prevArticles.map((article) =>
-                article.id === articleId
-                    ? { ...article, isBookmarked: !article.isBookmarked }
-                    : article
-            );
-
-            // 로컬 스토리지에 북마크 상태 저장
-            const bookmarkedIds = updatedArticles
-                .filter(article => article.isBookmarked)
-                .map(article => article.id);
-            localStorage.setItem('bookmarkedIds', JSON.stringify(bookmarkedIds));
-
-            return updatedArticles;
-        });
     };
 
     if (loading) {
@@ -89,7 +50,9 @@ export default function IdentifiedArticlesPage() {
                             <SelectedArticle
                                 article={selectedArticle}
                                 onClick={() => handleArticleClick(selectedArticle)}
-                                onToggleBookmark={handleToggleBookmark}
+                                onToggleBookmark={() =>
+                                    updateBookmark(selectedArticle.id, selectedArticle.isBookmarked || false)
+                                }
                             />
                         )}
                     </div>
@@ -97,7 +60,7 @@ export default function IdentifiedArticlesPage() {
                         <ArticleList
                             articles={currentArticles}
                             onArticleSelect={handleArticleSelect}
-                            onToggleBookmark={handleToggleBookmark}
+                            onToggleBookmark={updateBookmark}
                         />
                         <div className="flex justify-center mt-4">
                             {[...Array(Math.ceil(articles.length / articlesPerPage)).keys()].map(
@@ -106,8 +69,8 @@ export default function IdentifiedArticlesPage() {
                                         key={page + 1}
                                         onClick={() => handlePageChange(page + 1)}
                                         className={`px-4 py-2 mx-1 rounded-lg ${currentPage === page + 1
-                                            ? 'bg-blue-500 text-white'
-                                            : 'bg-gray-200'
+                                                ? 'bg-blue-500 text-white'
+                                                : 'bg-gray-200'
                                             }`}
                                     >
                                         {page + 1}

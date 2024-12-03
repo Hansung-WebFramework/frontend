@@ -8,7 +8,7 @@ export default function SelectedArticle({ article, onClick, onToggleBookmark }) 
         <div className="bg-white rounded-lg shadow-lg p-6">
             <Bookmark
                 isBookmarked={article.isBookmarked || false}
-                onToggle={() => onToggleBookmark(article.id)}
+                onToggle={onToggleBookmark}
             />
             <div className="relative">
                 <span className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -40,16 +40,7 @@ export default function SelectedArticle({ article, onClick, onToggleBookmark }) 
 }
 
 SelectedArticle.propTypes = {
-    article: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        isBookmarked: PropTypes.bool,
-        originalArticle: PropTypes.shape({
-            image: PropTypes.string.isRequired,
-        }).isRequired,
-        accuracy: PropTypes.number.isRequired,
-        summary: PropTypes.string.isRequired,
-    }).isRequired,
+    article: PropTypes.object.isRequired,
     onClick: PropTypes.func.isRequired,
     onToggleBookmark: PropTypes.func.isRequired,
 };

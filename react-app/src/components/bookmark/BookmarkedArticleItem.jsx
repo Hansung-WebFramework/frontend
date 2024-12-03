@@ -9,7 +9,9 @@ export default function BookmarkArticleItem({
 }) {
   return (
     <div
-      className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-xl hover:scale-105 transform transition-all duration-300 relative"
+      className={`bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-xl hover:scale-105 transform transition-all duration-300 relative ${
+        !isBookmarked ? 'opacity-50' : ''
+      }`} // 북마크되지 않은 기사의 투명도 조절
       onClick={() => onClick(article)}
     >
       <div className="relative w-full h-[200px]">
@@ -21,7 +23,7 @@ export default function BookmarkArticleItem({
         {/* 북마크 아이콘 */}
         <Bookmark
           isBookmarked={isBookmarked}
-          onToggle={() => onToggleBookmark(article.id)}
+          onToggle={onToggleBookmark}
         />
       </div>
       <div className="p-3">
@@ -34,15 +36,8 @@ export default function BookmarkArticleItem({
 }
 
 BookmarkArticleItem.propTypes = {
-  article: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    summary: PropTypes.string.isRequired,
-    originalArticle: PropTypes.shape({
-      image: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
+  article: PropTypes.object.isRequired,
   isBookmarked: PropTypes.bool.isRequired,
   onToggleBookmark: PropTypes.func.isRequired,
-  onClick: PropTypes.func, // 추가된 부분
+  onClick: PropTypes.func.isRequired,
 };

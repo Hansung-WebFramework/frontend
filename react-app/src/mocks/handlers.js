@@ -4,21 +4,42 @@ import analysis from "./analysis.json";
 import onboardingMock from "./OnboardingMock.js"; // 온보딩 데이터 가져오기
 import { chartMockData } from "./AnalysischartMock.js"; // 차트 데이터 가져오기
 
+let analysisData = [...analysis];
+
 export const handlers = [
   // 기존 /dummy 엔드포인트
   http.get("/dummy", () => {
     return HttpResponse.json(dummy);
   }),
 
-  // 기존 /analysis 엔드포인트
+  // GET /analysis
   http.get("/analysis", () => {
-    return HttpResponse.json(analysis);
+    return HttpResponse.json(analysisData);
   }),
 
+  // GET /bookmarks
   http.get("/bookmarks", () => {
     return HttpResponse.json(
-      analysis.filter((article) => article.isBookmarked)
+      analysisData.filter((article) => article.isBookmarked)
     );
+  }),
+
+  // POST /bookmarks: 북마크 추가
+  http.post("/bookmarks", async (req) => {
+    const { id } = await req.json();
+    analysisData = analysisData.map((article) =>
+      article.id === id ? { ...article, isBookmarked: true } : article
+    );
+    return HttpResponse.json({ success: true });
+  }),
+
+  // DELETE /bookmarks/:id: 북마크 제거
+  http.delete("/bookmarks/:id", (req) => {
+    const { id } = req.params;
+    analysisData = analysisData.map((article) =>
+      article.id === id ? { ...article, isBookmarked: false } : article
+    );
+    return HttpResponse.json({ success: true });
   }),
 
   // 새로 추가: /api/stats 엔드포인트

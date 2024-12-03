@@ -9,7 +9,9 @@ export default function ArticleList({ articles, onArticleSelect, onToggleBookmar
                     key={article.id}
                     article={article}
                     isBookmarked={article.isBookmarked || false}
-                    onToggleBookmark={onToggleBookmark}
+                    onToggleBookmark={() =>
+                        onToggleBookmark(article.id, article.isBookmarked || false)
+                    }
                     onClick={onArticleSelect}
                 />
             ))}
@@ -18,16 +20,7 @@ export default function ArticleList({ articles, onArticleSelect, onToggleBookmar
 }
 
 ArticleList.propTypes = {
-    articles: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            title: PropTypes.string.isRequired,
-            isBookmarked: PropTypes.bool,
-            originalArticle: PropTypes.shape({
-                image: PropTypes.string.isRequired,
-            }).isRequired,
-        })
-    ).isRequired,
+    articles: PropTypes.array.isRequired,
     onArticleSelect: PropTypes.func.isRequired,
     onToggleBookmark: PropTypes.func.isRequired,
 };
