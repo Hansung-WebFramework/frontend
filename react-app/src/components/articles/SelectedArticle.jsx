@@ -1,10 +1,15 @@
 import PropTypes from 'prop-types';
+import Bookmark from '../bookmark/Bookmark';
 
-export default function SelectedArticle({ article, onClick }) {
+export default function SelectedArticle({ article, onClick, onToggleBookmark }) {
     if (!article) return null;
 
     return (
         <div className="bg-white rounded-lg shadow-lg p-6">
+            <Bookmark
+                isBookmarked={article.isBookmarked || false}
+                onToggle={onToggleBookmark}
+            />
             <div className="relative">
                 <span className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                     본석 페이지
@@ -35,14 +40,7 @@ export default function SelectedArticle({ article, onClick }) {
 }
 
 SelectedArticle.propTypes = {
-    article: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        originalArticle: PropTypes.shape({
-            image: PropTypes.string.isRequired,
-        }).isRequired,
-        accuracy: PropTypes.number.isRequired,
-        summary: PropTypes.string.isRequired,
-    }).isRequired,
+    article: PropTypes.object.isRequired,
     onClick: PropTypes.func.isRequired,
+    onToggleBookmark: PropTypes.func.isRequired,
 };

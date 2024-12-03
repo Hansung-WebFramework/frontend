@@ -1,37 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import SelectedArticle from '../components/articles/SelectedArticle';
 import ArticleList from '../components/articles/ArticleList';
 import Loader from '../components/Loader';
+import { ArticleContext } from '../contexts/ArticleContext';
 
 export default function IdentifiedArticlesPage() {
-    const [articles, setArticles] = useState([]);
+    const { articles, loading, updateBookmark } = useContext(ArticleContext);
     const [selectedArticle, setSelectedArticle] = useState(null);
-    const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const articlesPerPage = 4;
     const navigate = useNavigate();
 
+    // 컴포넌트가 마운트될 때 첫 번째 기사를 선택
     useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                const res = await fetch('/analysis');
-                if (!res.ok) {
-                    throw new Error('Failed to fetch articles');
-                }
-                const data = await res.json();
-                setArticles(data);
-                setSelectedArticle(data[0]);
-            } catch (error) {
-                console.error('Error fetching articles:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchArticles();
-    }, []);
+        if (articles.length > 0) {
+            setSelectedArticle(articles[0]);
+        }
+    }, [articles]);
 
     const handleArticleSelect = (article) => {
         setSelectedArticle(article);
@@ -63,6 +50,9 @@ export default function IdentifiedArticlesPage() {
                             <SelectedArticle
                                 article={selectedArticle}
                                 onClick={() => handleArticleClick(selectedArticle)}
+                                onToggleBookmark={() =>
+                                    updateBookmark(selectedArticle.id, selectedArticle.isBookmarked || false)
+                                }
                             />
                         )}
                     </div>
@@ -70,6 +60,7 @@ export default function IdentifiedArticlesPage() {
                         <ArticleList
                             articles={currentArticles}
                             onArticleSelect={handleArticleSelect}
+                            onToggleBookmark={updateBookmark}
                         />
                         <div className="flex justify-center mt-4">
                             {[...Array(Math.ceil(articles.length / articlesPerPage)).keys()].map(

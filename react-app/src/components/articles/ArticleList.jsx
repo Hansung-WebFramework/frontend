@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types';
 import ArticleItem from './ArticleItem';
 
-export default function ArticleList({ articles, onArticleSelect }) {
+export default function ArticleList({ articles, onArticleSelect, onToggleBookmark }) {
     return (
         <div className="grid grid-cols-2 gap-4">
             {articles.map((article) => (
                 <ArticleItem
                     key={article.id}
                     article={article}
+                    isBookmarked={article.isBookmarked || false}
+                    onToggleBookmark={() =>
+                        onToggleBookmark(article.id, article.isBookmarked || false)
+                    }
                     onClick={onArticleSelect}
                 />
             ))}
@@ -16,14 +20,7 @@ export default function ArticleList({ articles, onArticleSelect }) {
 }
 
 ArticleList.propTypes = {
-    articles: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            title: PropTypes.string.isRequired,
-            originalArticle: PropTypes.shape({
-                image: PropTypes.string.isRequired,
-            }).isRequired,
-        })
-    ).isRequired,
+    articles: PropTypes.array.isRequired,
     onArticleSelect: PropTypes.func.isRequired,
+    onToggleBookmark: PropTypes.func.isRequired,
 };
