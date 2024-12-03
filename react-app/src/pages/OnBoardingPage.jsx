@@ -82,6 +82,10 @@ export default function OnBoardingPage() {
     }, 1500);
   };
 
+  const handleArticleClick = (articleId) => {
+    navigate(`/AnalysisPage/${articleId}`);
+  };
+
   const handleMouseDown = (e) => {
     isDragging.current = true;
     startX.current = e.pageX || e.touches[0].pageX;
@@ -231,6 +235,7 @@ export default function OnBoardingPage() {
                 className={styles["slider-item"]}
                 onDragStart={disableDrag}
                 style={{ userSelect: "none" }}
+                onClick={() => handleArticleClick(article.id)}
               >
                 <img
                   src={article.originalArticle.image}
